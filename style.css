@@ -6,11 +6,59 @@
 }
 
 body {
-    background-color: #f3f4f6;
+    background-color: #f8fafc;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-top: 48px;
+}
+
+.canva-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(90deg, #00c4cc 0%, #3b82f6 50%, #8b3dff 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.left-menu {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.file-menu-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.file-menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.project-title {
+    font-weight: 600;
+}
+
+.right-menu .share-btn-mock {
+    background-color: #ffffff;
+    color: #7b61ff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .export-modal {
@@ -20,7 +68,6 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
-
 
 .export-modal h2 {
     font-size: 16px;
@@ -37,7 +84,137 @@ body {
     margin-bottom: 8px;
 }
 
-
 .form-group {
     margin-bottom: 24px;
+}
+
+#file-type {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #c7cdd4;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #0e1318;
+    outline: none;
+    cursor: pointer;
+}
+
+#file-type:focus {
+    border-color: #8b3dff;
+    box-shadow: 0 0 0 2px rgba(139, 61, 255, 0.2);
+}
+
+#download-btn {
+    width: 100%;
+    background-color: #8b3dff;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 16px;
+}
+
+#download-btn:hover {
+    background-color: #7a34e1;
+}
+
+#download-btn:focus {
+    outline: 2px solid #0e1318;
+    outline-offset: 2px;
+}
+
+.toggles-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #0e1318;
+}
+
+.toggle-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 36px;
+    height: 20px;
+    background-color: #c7cdd4;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-checkbox::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.toggle-checkbox:checked {
+    background-color: #8b3dff;
+}
+
+.toggle-checkbox:checked::before {
+    transform: translateX(16px);
+}
+
+.toggle-checkbox:focus {
+    outline: 2px solid #8b3dff;
+    outline-offset: 2px;
+}
+
+.page-selection {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+    color: #0e1318;
+}
+
+.page-selection input[type="radio"] {
+    accent-color: #8b3dff;
+    cursor: pointer;
+}
+
+.page-selection label {
+    cursor: pointer;
+}
+
+#status-message {
+    margin-top: 12px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#status-message.hidden {
+    display: none;
+}
+
+.error-state {
+    color: #e53e3e;
+}
+
+.success-state {
+    color: #38a169;
+}
+
+.loading-state {
+    color: #8b3dff;
 }
